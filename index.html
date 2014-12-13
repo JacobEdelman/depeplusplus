@@ -139,9 +139,6 @@
 window.onload = function () {
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
-		title:{
-			text: "Estimated Breakdown of Reasons for buying DEPE++"
-		},
 		legend:{
 			verticalAlign: "bottom",
 			horizontalAlign: "center"
@@ -155,7 +152,7 @@ window.onload = function () {
 			indexLabelPlacement: "outside",
 			type: "pie",
 			showInLegend: true,
-			toolTipContent: "{y} - <strong>#percent%</strong>",
+			toolTipContent: "<strong>#percent%</strong>",
 			dataPoints: [
 				{  y: 70, legendText:"Parents", indexLabel: "Parent's desire" },
 				{  y: 20, legendText:"Children", indexLabel: "Child's desire" },
@@ -357,8 +354,8 @@ Credit goes to:
             </div>
 
             <div class="well page" id="demographics">
+                <h1 class="header">Estimated Breakdown of Reasons for buying DEPE++</h1>
                 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
-              <h1 class="header">Vision</h1>
               <!-- Simple checkbox with label -->
 
             </div>
