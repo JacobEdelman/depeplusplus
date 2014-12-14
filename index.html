@@ -136,7 +136,7 @@
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
-window.onload = function () {
+function drawChart() {
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
 		legend:{
@@ -191,7 +191,7 @@ Credit goes to:
             <li class="withripple" data-target="#goal">Vision</li>
               <li class="withripple" data-target="#timeline">Schedule</li>
             <li class="withripple" data-target="#sweepstakes">Sweepstakes</li>
-              <li class="withripple" data-target="#demographics">Demographics</li>
+              <li class="withripple" data-target="#demographics" onclick="window.setTimeout(drawChart,700);">Demographics</li>
               <li class="withripple" data-target="#magad">Magazine Ad</li>
               <li class="withripple" data-target="#budget">Budget</li>
           </ul>
@@ -346,7 +346,7 @@ Credit goes to:
 
             <div class="well page" id="demographics" >
                 <h1 class="header">Estimated Breakdown of Reasons for Buying DEPE++</h1>
-                <div id="chartContainer" style="min-height:600px"></div>
+                <div id="chartContainer" style="min-height:600px;width:100%"></div>
                 <p>Although the toy is designated for children, the primary target of the toy is aimed towards parents. In order to have their children be competitive in a the world fueled by technology and science, parents aspire to have their children excel in the fields of STEM. They seek to educate their children with toys which develop their minds to rise and prosper in these fields. Parents will go to great lengths to ensure an education advantage for their children in these fields. Parents are the primary target market for this product because parents are more compelled to buy educational toys than children are.</p>
               <!-- Simple checkbox with label -->
 
