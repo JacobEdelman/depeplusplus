@@ -136,7 +136,7 @@
     <!-- jQuery -->
     <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript">
-window.onload = function () {
+function drawChart() {
 	var chart = new CanvasJS.Chart("chartContainer",
 	{
 		legend:{
@@ -191,7 +191,7 @@ Credit goes to:
             <li class="withripple" data-target="#goal">Vision</li>
               <li class="withripple" data-target="#timeline">Schedule</li>
             <li class="withripple" data-target="#sweepstakes">Sweepstakes</li>
-              <li class="withripple" data-target="#demographics">Demographics</li>
+              <li class="withripple" data-target="#demographics" onclick="window.setTimeout(drawChart,700);">Demographics</li>
               <li class="withripple" data-target="#magad">Magazine Ad</li>
               <li class="withripple" data-target="#budget">Budget</li>
           </ul>
