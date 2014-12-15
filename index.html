@@ -23,21 +23,38 @@
         box-sizing: border-box;
       }
       .header-panel {
+          
         background-color: #009587;
         height: 144px;
-        position: relative;
+        
         z-index: 3;
       }
       .header-panel div {
         position: relative;
         height: 100%;
       }
+        @media screen and (max-width:750px) {
+    .header-panel h1 { display:none }
+            .offmob {display:none}
+        }
+                @media screen and (min-width:750px) {
+            .onmob { display:none }
+        }
       .header-panel h1 {
+
+
         color: #FFF;
         font-size: 20px;
         font-weight: 400;
         position: absolute;
         bottom: 10px;
+        padding-left: 35px;
+      }
+    .header-panel img {
+        height:70px;
+        position: absolute;
+        bottom: 10px;
+        margin-left:10px;
         padding-left: 35px;
       }
 
@@ -162,13 +179,42 @@ function drawChart() {
 		]
 	});
 	chart.render();
+
 }
+            function drawChart2(){
+                        	var chart = new CanvasJS.Chart("chartContainer2",
+	{
+		legend:{
+			verticalAlign: "bottom",
+			horizontalAlign: "center"
+		},
+		data: [
+		{
+			indexLabelFontSize: 20,
+			indexLabelFontFamily: "Monospace",
+			indexLabelFontColor: "darkgrey",
+			indexLabelLineColor: "darkgrey",
+			indexLabelPlacement: "outside",
+			type: "pie",
+			showInLegend: true,
+			toolTipContent: "<strong>#percent%</strong>",
+			dataPoints: [
+				{  y: 100000, legendText:"Cost for Radio Ads", indexLabel: "Radio" },
+				{  y: 6, legendText:"Cost for Website", indexLabel: "Website" },
+				{  y: 0, legendText:"Cost for Social Media",exploded: true, indexLabel: "Social Media" },
+                {  y: 10000, legendText:"Cost for Misc./Overhead",exploded: true, indexLabel: "Misc." },
+                            {  y: 750000, legendText:"Magazine Ads",exploded: true, indexLabel: "Magazine" }
+			]
+		}
+		]
+	});
+	chart.render();}
 </script>
 <script type="text/javascript" src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
   </head>
   <body>
-<img src="logo.png" alt="DEPE++" data-canonical-src="logo.png"  style="position: absolute; top: 70px; left: 150px; border: 0; z-index: 10;height:70px">
+
 <!--
 Credit goes to:
     <a href="https://github.com/FezVrasta/bootstrap-material-design" style="position: absolute; top: 0; left: 0; border: 0; z-index: 10;"><img src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
@@ -176,10 +222,15 @@ Credit goes to:
 
     <div class="header-panel shadow-z-2">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-3">
+        <div class="row" >
+          <div class="col-xs-1">
             <h1>DEPE++</h1>
+                                      <img src="logo.png" alt="DEPE++" data-canonical-src="logo.png"  class="onmob">
           </div>
+        <div class="col-xs-1">
+            <img src="logo.png" alt="DEPE++" data-canonical-src="logo.png"  class="offmob">
+          </div>
+
         </div>
       </div>
     </div>
@@ -193,7 +244,7 @@ Credit goes to:
             <li class="withripple" data-target="#sweepstakes">Sweepstakes</li>
               <li class="withripple" data-target="#demographics" onclick="window.setTimeout(drawChart,700);">Demographics</li>
               <li class="withripple" data-target="#magad">Magazine Ad</li>
-              <li class="withripple" data-target="#budget">Budget</li>
+              <li class="withripple" data-target="#budget" onclick="window.setTimeout(drawChart2,700);">Budget</li>
           </ul>
         </nav>
 
@@ -358,6 +409,7 @@ Credit goes to:
             </div>
             <div class="well page" id="budget" >
                 <h1 class="header">Budget</h1>
+                <div id="chartContainer2" style="min-height:600px;width:100%"></div>
               <iframe width="100%" height="650" style="border:1px solid #ccc" frameborder="0" scrolling="no" src="https://docs.zoho.com/sheet/published.do?rid=ctdnuc6dc9981dbd74e8d913e1ed3976b8767&mode=embed"> </iframe>
               <!-- Simple checkbox with label -->
             </div>
